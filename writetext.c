@@ -6,11 +6,11 @@
 int main(){
     char buffer[80];
 
-    char message[] = "Hello, world";
+    char message[] = "Hello, world. I Am Ahsan";
 
     int fd;
 
-    fd = open("text.txt", O_RDWR);
+    fd = open("text.txt", O_RDWR | O_CREAT, 0644);
 
     if(fd != -1){
         write(fd,message,sizeof(message));
