@@ -14,6 +14,9 @@ int main(){
 
     if(fd != -1){
         write(fd,message,sizeof(message));
+        lseek(fd,0,0);
+        read(fd,buffer,sizeof(message));
+        printf("%s",buffer);
 
     }else if(fd==-1){
         printf("file was not found");
