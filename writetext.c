@@ -4,18 +4,15 @@
 
 
 int main(){
-    char buffer[80];
+    char buffer[500];
 
-    char message[] = "Hello, world. I Am Ahsan";
 
     int fd;
 
-    fd = open("text.txt", O_RDWR | O_CREAT, 0644);
+    fd = open("text.txt", O_RDONLY);
 
     if(fd != -1){
-        write(fd,message,sizeof(message));
-        lseek(fd,0,0);
-        read(fd,buffer,sizeof(message));
+        read(fd,buffer,sizeof(buffer));
         printf("%s",buffer);
 
     }else if(fd==-1){
